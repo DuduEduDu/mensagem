@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Para Meu Grande Amor</title>
+
+  <!-- Meta para responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     /* Estilinho simples e romântico */
     body {
@@ -13,7 +17,8 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden; /* Evita scroll horizontal */
+      padding: 10px; /* Pequeno padding para telas muito pequenas */
     }
 
     .carta {
@@ -22,7 +27,8 @@
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       max-width: 700px;
-      width: 90%;
+      width: 100%; /* Para ficar 100% da largura do container/padding */
+      box-sizing: border-box;
     }
 
     h1 {
@@ -52,6 +58,14 @@
       cursor: pointer;
       margin-left: auto;
       margin-right: auto;
+      max-width: 200px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao:hover {
+      background: #e04d74;
     }
 
     .coraçao {
@@ -94,6 +108,49 @@
         transform: translateX(50px) rotate(45deg);
       }
     }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      #mensagem {
+        font-size: 16px;
+      }
+
+      .carta {
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .botao {
+        font-size: 14px;
+        padding: 10px 15px;
+        max-width: 150px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      #mensagem {
+        font-size: 14px;
+      }
+
+      .carta {
+        padding: 15px;
+      }
+
+      .botao {
+        font-size: 13px;
+        padding: 8px 12px;
+        max-width: 140px;
+      }
+    }
+
   </style>
 </head>
 <body>
